@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Курсовая работа по системному администрированию">
+    <title>Системное ПО - Курсовая работа</title>
+    <style>
+    * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+    }
+    
+    .slider-container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        will-change: transform;
+    }
+    
+    .slide-bg {
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        width: 120%;
+        height: 120%;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease-out;
+        will-change: transform;
+    }
+
+    .slide:nth-child(1) .slide-bg {
+        background-image: url('izobr/1.jpg');
+    }
+    
+    .slide:nth-child(1)::before {
+        content: '';
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%;
+        background: rgba(0, 0, 10, 0.6);
+    }
+    
+    .slide:nth-child(2) .slide-bg {
+        background-image: url('izobr/2.jpg');
+    }
+    
+    .slide:nth-child(2)::before {
+        content: '';
+        position: absolute;
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%;
+        background: rgba(0, 0, 10, 0.6);
+    }
+    
+    .slide::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .slide-content {
+        position: absolute;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        color: white; 
+        text-align: center; 
+        padding: 20px;
+        max-width: 900px; 
+        width: 90%;
+    }
+    
+    .header-box {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px; 
+        border-radius: 10px; 
+        margin: 0 auto;
+    }
+    
+    h1 { 
+        font-size: 2.5rem; 
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    .project-info { 
+        margin-top: 20px; 
+    }
+    
+    .subject-name { 
+        font-size: 1.2rem; 
+        color: #ccc; 
+        margin: 10px 0;
+    }
+    
+    .discipline { 
+        font-size: 2rem; 
+        color: #fff; 
+        margin: 15px 0;
+    }
+    
+    .decorative-line {
+        width: 60%;
+        height: 2px; 
+        background-color: #fff; 
+        margin: 20px auto;
+    }
+
+    .interactive-menu {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu-title {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 2.2rem;
+    }
+
+    .menu-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .menu-item {
+        padding: 1.2rem;
+        margin: 0.8rem 0;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+        color: #fff;
+    }
+
+    .menu-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(10px);
+    }
+
+    .menu-icon {
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        width: 30px;
+        text-align: center;
+    }
+        
+    /* Мобильная адаптация */
+    @media (max-width: 768px) {
+        h1 { font-size: 2rem !important; }
+        .discipline { font-size: 1.5rem !important; }
+        .subject-name { font-size: 1rem; }
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <!-- Слайд 1 -->
+        <div class="slide" aria-hidden="false">
+            <div class="slide-bg"></div>
+            <div class="slide-content">
+                <div class="header-box">
+                    <h1>Разработка Web-страницы с описанием разделов системного программного обеспечения</h1>
+                </div>
+                <div class="project-info">
+                    <div class="decorative-line"></div>
+                    <p class="subject-name">Курсовой проект по дисциплине</p>
+                    <h2 class="discipline">«Системное администрирование»</h2>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Слайд 2 -->
+        <div class="slide" aria-hidden="true">
+            <div class="slide-bg"></div>
+            <div class="slide-content">
+                <div class="header-box">
+                    <h1>Всем здравствуйте</h1>
+                </div>
+                <div class="project-info">
+                    <div class="decorative-line"></div>
+                    <p class="subject-name">Сайт создан как курсовой проект по дисциплине «Системное администрирование» на тему:</p>
+                    <p class="subject-name">«Разработка Web-страницы с описанием разделов системного программного обеспечения»</p>
+                    <p class="subject-name">Далее по сайту будет меню с категориями которые вы можете выбрать.</p>
+                    <div class="decorative-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" aria-hidden="true">
+    <div class="slide-content">
+        <div class="interactive-menu">
+            <h2 class="menu-title">Меню настройки системы</h2>
+            <ul class="menu-list">
+                <li class="menu-item" data-section="main">
+                    <span class="menu-icon">🏠</span>
+                    Главная
+                </li>
+                <li class="menu-item" data-section="os">
+                    <span class="menu-icon">💻</span>
+                    Выбор ОС
+                </li>
+                <li class="menu-item" data-section="fs">
+                    <span class="menu-icon">💾</span>
+                    Выбор ФС и разметка жесткого диска/твердотельного накопителя
+                </li>
+                <li class="menu-item" data-section="remote">
+                    <span class="menu-icon">🌐</span>
+                    Средства удаленного управления компьютером
+                </li>
+                <li class="menu-item" data-section="diagnostics">
+                    <span class="menu-icon">⚙️</span>
+                    Средства диагностики, контроля и мониторинга системы
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+    </div>
+
+    <script>
+    class FullPageSlider {
+    constructor() {
+        this.slides = document.querySelectorAll('.slide');
+        this.bgElements = document.querySelectorAll('.slide-bg');
+        this.currentSlide = 0;
+        this.mouseX = 0;
+        this.mouseY = 0;
+        this.init();
+    }
+
+    init() {
+            this.addEventListeners();
+            this.updateSlidesPosition();
+            this.updateAriaAttributes();
+            this.animateBackground();
+    }
+
+    animateBackground() {
+            const animate = () => {
+                const activeSlide = this.slides[this.currentSlide];
+                const bg = activeSlide.querySelector('.slide-bg');
+                
+                // Рассчитываем смещение
+                const moveX = (this.mouseX - window.innerWidth/2) * 0.02;
+                const moveY = (this.mouseY - window.innerHeight/2) * 0.02;
+                
+                // Применяем трансформацию
+                bg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.1)`;
+                
+                requestAnimationFrame(animate);
+            };
+            animate();
+        }
+
+        handleMouseMove(e) {
+            this.mouseX = e.clientX;
+            this.mouseY = e.clientY;
+        }
+
+    isDesktop() {
+        return window.matchMedia("(hover: hover)").matches;
+    }
+
+    addEventListeners() {
+        window.addEventListener('wheel', this.handleScroll.bind(this));
+        window.addEventListener('keydown', this.handleKeydown.bind(this));
+        window.addEventListener('mousemove', e => this.handleMouseMove(e));
+        window.addEventListener('resize', () => this.updateSlidesPosition());
+    }
+
+    addTouchHandlers() {
+        window.addEventListener('touchstart', e => {
+            this.touchStartY = e.touches[0].clientY;
+        });
+        
+        window.addEventListener('touchend', e => {
+            this.handleTouch(e);
+        });
+    }
+
+    handleScroll(e) {
+        if (this.isAnimating) return;
+        const delta = Math.sign(e.deltaY);
+        delta > 0 ? this.nextSlide() : this.prevSlide();
+    }
+
+    handleKeydown(e) {
+        if (this.isAnimating) return;
+        if (e.key === 'ArrowDown') this.nextSlide();
+        if (e.key === 'ArrowUp') this.prevSlide();
+    }
+
+    handleTouch(e) {
+        if (this.isAnimating) return;
+        const touchEndY = e.changedTouches[0].clientY;
+        const delta = this.touchStartY - touchEndY;
+        
+        if (Math.abs(delta) < 50) return;
+        delta > 0 ? this.nextSlide() : this.prevSlide();
+    }
+
+    handleResize() {
+        this.updateSlidesPosition();
+    }
+
+    nextSlide() {
+        if (this.currentSlide < this.slides.length - 1) {
+            this.currentSlide++;
+            this.animateSlides();
+        }
+    }
+
+    prevSlide() {
+        if (this.currentSlide > 0) {
+            this.currentSlide--;
+            this.animateSlides();
+        }
+    }
+
+    animateSlides() {
+        this.isAnimating = true;
+        
+        this.slides.forEach((slide, index) => {
+            const translateY = (index - this.currentSlide) * 100; // Исправлено
+            slide.style.transform = `translateY(${translateY}%)`;
+            
+            slide.addEventListener('transitionend', () => {
+                this.isAnimating = false;
+                this.updateAriaAttributes();
+            }, { once: true });
+        });
+    }
+
+    updateSlidesPosition() {
+        this.slides.forEach((slide, index) => {
+            const translateY = (index - this.currentSlide) * 100; // Исправлено
+            slide.style.transform = `translateY(${translateY}%)`;
+        });
+    }
+
+    updateAriaAttributes() {
+        this.slides.forEach((slide, index) => {
+            slide.setAttribute('aria-hidden', index !== this.currentSlide);
+        });
+    }
+    }
+
+    window.addEventListener('load', () => {
+    new FullPageSlider();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelectorAll('.menu-item');
+    
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Удаляем активный класс у всех элементов
+            menuItems.forEach(i => i.classList.remove('active'));
+            
+            // Добавляем активный класс текущему элементу
+            this.classList.add('active');
+            
+            // Получаем секцию для отображения
+            const section = this.dataset.section;
+            
+            // Здесь можно добавить логику отображения соответствующего контента
+            console.log(`Переход к секции: ${section}`);
+            
+            // Пример анимации
+            this.style.transform = 'translateX(0)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 300);
+        });
+    });
+});
+    </script>
+</body>
+</html>
